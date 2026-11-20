@@ -1,0 +1,3 @@
+package com.jordimundam.viewmodel
+
+data class QuoteModel (val quote:String, val author:String)
