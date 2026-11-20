@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.jordimundam.viewmodel.databinding.FragmentHomeBinding
@@ -23,7 +24,12 @@ class FragmentHome : Fragment() {
             viewModel.randomQuote()
             binding.tvQuote.text = viewModel.frase
             binding.tvAuthor.text = viewModel.autor
+
+            viewModel.randomAlum()
+            Toast.makeText(requireContext(), "NOM: ${viewModel.nom} | EDAT: ${viewModel.edat}", Toast.LENGTH_SHORT).show()
+
         }
+
         return binding.root
 
     }
